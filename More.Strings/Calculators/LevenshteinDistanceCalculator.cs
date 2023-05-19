@@ -3,9 +3,9 @@ using More.Strings.Models;
 
 namespace More.Strings.Calculators;
 
-public class LevenshteinDistanceCalculator : ICalculator<StringDistanceInput, int>
+public class LevenshteinDistanceCalculator : ICalculator<StringComparisonInput, int>
 {
-    public int Calculate(StringDistanceInput input)
+    public int Calculate(StringComparisonInput input)
     {
         var sourceLength = input.Source.Length;
         var targetLength = input.Target.Length;

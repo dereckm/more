@@ -1,4 +1,4 @@
-using FluentAssertions;
+﻿using FluentAssertions;
 using More.Strings.Calculators;
 using More.Strings.Models;
 using NUnit.Framework;
@@ -6,14 +6,14 @@ using NUnit.Framework;
 namespace More.Strings.Tests.Calculators;
 
 [TestFixture]
-public class LevenshteinDistanceCalculatorTests
+public class NeedlemanWunschCalculatorTests
 {
-    private LevenshteinDistanceCalculator _calculator;
+    private NeedlemanWunschCalculator _calculator;
 
     [SetUp]
     public void Setup()
     {
-        _calculator = new LevenshteinDistanceCalculator();
+        _calculator = new NeedlemanWunschCalculator();
     }
 
     [Test]

@@ -22,7 +22,7 @@ public class HammingDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetAreEqual_ShouldReturnZero()
     {
         // Arrange
-        var input = new StringDistanceInput("hello", "hello");
+        var input = new StringComparisonInput("hello", "hello");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -35,7 +35,7 @@ public class HammingDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetAreDifferentByOneCharacter_ShouldReturnOne()
     {
         // Arrange
-        var input = new StringDistanceInput("hello", "hella");
+        var input = new StringComparisonInput("hello", "hella");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -48,7 +48,7 @@ public class HammingDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetAreCompletelyDifferent_ShouldReturnStringLength()
     {
         // Arrange
-        var input = new StringDistanceInput("abc", "def");
+        var input = new StringComparisonInput("abc", "def");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -61,7 +61,7 @@ public class HammingDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetHaveDifferentCharactersAtMultiplePositions_ShouldReturnCorrectDistance()
     {
         // Arrange
-        var input = new StringDistanceInput("abcde", "axcze");
+        var input = new StringComparisonInput("abcde", "axcze");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -74,7 +74,7 @@ public class HammingDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetHaveDifferentCases_ShouldCountAsDifferentCharacters()
     {
         // Arrange
-        var input = new StringDistanceInput("Hello", "hELLO");
+        var input = new StringComparisonInput("Hello", "hELLO");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -87,7 +87,7 @@ public class HammingDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetAreEmptyStrings_ShouldReturnZero()
     {
         // Arrange
-        var input = new StringDistanceInput("", "");
+        var input = new StringComparisonInput("", "");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -100,7 +100,7 @@ public class HammingDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetHaveDifferentLengths_ShouldThrowArgumentException()
     {
         // Arrange
-        var input = new StringDistanceInput("abc", "defg");
+        var input = new StringComparisonInput("abc", "defg");
 
         // Act
         Action act = () => _calculator.Calculate(input);

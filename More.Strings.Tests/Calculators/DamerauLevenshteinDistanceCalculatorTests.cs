@@ -20,7 +20,7 @@ public class DamerauLevenshteinDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetAreEqual_ShouldReturnZero()
     {
         // Arrange
-        var input = new StringDistanceInput("hello", "hello");
+        var input = new StringComparisonInput("hello", "hello");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -33,7 +33,7 @@ public class DamerauLevenshteinDistanceCalculatorTests
     public void Calculate_WhenSourceIsEmpty_ShouldReturnTargetLength()
     {
         // Arrange
-        var input = new StringDistanceInput("", "world");
+        var input = new StringComparisonInput("", "world");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -46,7 +46,7 @@ public class DamerauLevenshteinDistanceCalculatorTests
     public void Calculate_WhenTargetIsEmpty_ShouldReturnSourceLength()
     {
         // Arrange
-        var input = new StringDistanceInput("hello", "");
+        var input = new StringComparisonInput("hello", "");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -59,7 +59,7 @@ public class DamerauLevenshteinDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetHaveDifferentCharacters_ShouldReturnCorrectDistance()
     {
         // Arrange
-        var input = new StringDistanceInput("kitten", "sitting");
+        var input = new StringComparisonInput("kitten", "sitting");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -72,7 +72,7 @@ public class DamerauLevenshteinDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetAreCompletelyDifferent_ShouldReturnMaxLength()
     {
         // Arrange
-        var input = new StringDistanceInput("abc", "def");
+        var input = new StringComparisonInput("abc", "def");
 
         // Act
         var distance = _calculator.Calculate(input);
@@ -85,7 +85,7 @@ public class DamerauLevenshteinDistanceCalculatorTests
     public void Calculate_WhenSourceAndTargetContainTranspositions_ShouldReturnCorrectDistance()
     {
         // Arrange
-        var input = new StringDistanceInput("abcdef", "bacdfe");
+        var input = new StringComparisonInput("abcdef", "bacdfe");
 
         // Act
         var distance = _calculator.Calculate(input);

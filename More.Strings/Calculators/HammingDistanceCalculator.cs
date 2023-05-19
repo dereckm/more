@@ -3,9 +3,9 @@ using More.Strings.Models;
 
 namespace More.Strings.Calculators;
 
-public class HammingDistanceCalculator : ICalculator<StringDistanceInput, int>
+public class HammingDistanceCalculator : ICalculator<StringComparisonInput, int>
 {
-    public int Calculate(StringDistanceInput input)
+    public int Calculate(StringComparisonInput input)
     {
         var a = input.Source;
         var b = input.Target;

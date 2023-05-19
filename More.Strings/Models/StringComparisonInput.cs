@@ -1,8 +1,8 @@
 ﻿namespace More.Strings.Models;
 
-public class StringDistanceInput
+public class StringComparisonInput
 {
-    public StringDistanceInput(string source, string target)
+    public StringComparisonInput(string source, string target)
     {
         Source = source;
         Target = target;
