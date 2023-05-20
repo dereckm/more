@@ -28,29 +28,36 @@ public class BinaryTree<T> where T : IComparable<T>
         }
     }
 
-    private void AddTo(BinaryTreeNode<T> node, BinaryTreeNode<T> newNode)
+    private static void AddTo(BinaryTreeNode<T> node, BinaryTreeNode<T> newNode)
     {
-        if (newNode.Value.CompareTo(node.Value) < 0)
+        while (true)
         {
-            if (node.Left == null)
+            if (newNode.Value.CompareTo(node.Value) < 0)
             {
-                node.Left = newNode;
+                if (node.Left == null)
+                {
+                    node.Left = newNode;
+                }
+                else
+                {
+                    node = node.Left;
+                    continue;
+                }
             }
             else
             {
-                AddTo(node.Left, newNode);
+                if (node.Right == null)
+                {
+                    node.Right = newNode;
+                }
+                else
+                {
+                    node = node.Right;
+                    continue;
+                }
             }
-        }
-        else
-        {
-            if (node.Right == null)
-            {
-                node.Right = newNode;
-            }
-            else
-            {
-                AddTo(node.Right, newNode);
-            }
+
+            break;
         }
     }
 }

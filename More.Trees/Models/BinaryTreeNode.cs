@@ -1,5 +1,8 @@
-﻿namespace More.Trees.Models;
+﻿using System.Diagnostics;
 
+namespace More.Trees.Models;
+
+[DebuggerDisplay("Value={Value}")]
 public class BinaryTreeNode<T>
 {
     public T Value { get; }
