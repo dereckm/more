@@ -1,19 +1,19 @@
 ﻿using FluentAssertions;
-using More.Strings.Calculators;
+using More.Strings.Calculations;
 using More.Strings.Models;
 using NUnit.Framework;
 
-namespace More.Strings.Tests.Calculators;
+namespace More.Strings.Tests.Calculations;
 
 [TestFixture]
-public class NeedlemanWunschCalculatorTests
+public class DamerauLevenshteinDistanceCalculatorTests
 {
-    private NeedlemanWunschCalculator _calculator;
+    private DamerauLevenshteinDistanceCalculator _calculator;
 
     [SetUp]
     public void Setup()
     {
-        _calculator = new NeedlemanWunschCalculator();
+        _calculator = new DamerauLevenshteinDistanceCalculator();
     }
 
     [Test]
@@ -79,5 +79,18 @@ public class NeedlemanWunschCalculatorTests
 
         // Assert
         distance.Should().Be(3);
+    }
+
+    [Test]
+    public void Calculate_WhenSourceAndTargetContainTranspositions_ShouldReturnCorrectDistance()
+    {
+        // Arrange
+        var input = new StringComparisonInput("abcdef", "bacdfe");
+
+        // Act
+        var distance = _calculator.Calculate(input);
+
+        // Assert
+        distance.Should().Be(2);
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System;
-using More.Strings.Calculators;
-using More.Strings.Models;
-
-namespace More.Strings.Tests.Calculators;
-
-using NUnit.Framework;
 using FluentAssertions;
+using More.Strings.Calculations;
+using More.Strings.Models;
+using NUnit.Framework;
+
+namespace More.Strings.Tests.Calculations;
 
 [TestFixture]
 public class HammingDistanceCalculatorTests

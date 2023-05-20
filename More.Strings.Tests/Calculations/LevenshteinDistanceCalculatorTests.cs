@@ -1,21 +1,19 @@
-﻿using More.Strings.Calculators;
-using More.Strings.Models;
-
-namespace More.Strings.Tests.Calculators;
-
-using NUnit.Framework;
 using FluentAssertions;
+using More.Strings.Calculations;
+using More.Strings.Models;
+using NUnit.Framework;
+
+namespace More.Strings.Tests.Calculations;
 
 [TestFixture]
-public class HirschbergACalculatorTests
+public class LevenshteinDistanceCalculatorTests
 {
-    private HirschbergCalculator _calculator;
+    private LevenshteinDistanceCalculator _calculator;
 
     [SetUp]
     public void Setup()
     {
-        var needlemanWunschCalculator = new NeedlemanWunschCalculator();
-        _calculator = new HirschbergCalculator(needlemanWunschCalculator);
+        _calculator = new LevenshteinDistanceCalculator();
     }
 
     [Test]

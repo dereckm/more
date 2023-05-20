@@ -1,7 +1,7 @@
 ﻿using More.Core;
 using More.Strings.Models;
 
-namespace More.Strings.Calculators;
+namespace More.Strings.Calculations;
 
 public class NeedlemanWunschCalculator : ICalculator<StringComparisonInput, int>
 {

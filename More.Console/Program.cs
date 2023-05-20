@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using More.Strings;
-using More.Strings.Calculators;
+using More.Strings.Calculations;
 using More.Strings.Models;
 
 var distanceCalculator = new HammingDistanceCalculator();
